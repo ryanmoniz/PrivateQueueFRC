@@ -10,11 +10,18 @@
 		525EA326220F67BA009B19E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA325220F67BA009B19E0 /* AppDelegate.swift */; };
 		525EA328220F67BA009B19E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA327220F67BA009B19E0 /* ViewController.swift */; };
 		525EA32B220F67BA009B19E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525EA329220F67BA009B19E0 /* Main.storyboard */; };
-		525EA32E220F67BA009B19E0 /* PrivateQueueFRC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 525EA32C220F67BA009B19E0 /* PrivateQueueFRC.xcdatamodeld */; };
 		525EA330220F67BB009B19E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 525EA32F220F67BB009B19E0 /* Assets.xcassets */; };
 		525EA333220F67BB009B19E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525EA331220F67BB009B19E0 /* LaunchScreen.storyboard */; };
 		525EA33E220F67BB009B19E0 /* PrivateQueueFRCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA33D220F67BB009B19E0 /* PrivateQueueFRCTests.swift */; };
 		525EA349220F67BB009B19E0 /* PrivateQueueFRCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA348220F67BB009B19E0 /* PrivateQueueFRCUITests.swift */; };
+		525EA360220F6E18009B19E0 /* RootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA359220F6E18009B19E0 /* RootClass.swift */; };
+		525EA361220F6E18009B19E0 /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA35A220F6E18009B19E0 /* Statistic.swift */; };
+		525EA362220F6E18009B19E0 /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA35B220F6E18009B19E0 /* Airport.swift */; };
+		525EA363220F6E18009B19E0 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA35C220F6E18009B19E0 /* Flight.swift */; };
+		525EA364220F6E18009B19E0 /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA35D220F6E18009B19E0 /* Delay.swift */; };
+		525EA365220F6E18009B19E0 /* FlightTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA35E220F6E18009B19E0 /* FlightTime.swift */; };
+		525EA366220F6E18009B19E0 /* MinutesDelayed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA35F220F6E18009B19E0 /* MinutesDelayed.swift */; };
+		52B55328220F7FE60027C045 /* Carrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B55327220F7FE60027C045 /* Carrier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,14 @@
 		525EA344220F67BB009B19E0 /* PrivateQueueFRCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrivateQueueFRCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		525EA348220F67BB009B19E0 /* PrivateQueueFRCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateQueueFRCUITests.swift; sourceTree = "<group>"; };
 		525EA34A220F67BB009B19E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		525EA359220F6E18009B19E0 /* RootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootClass.swift; sourceTree = "<group>"; };
+		525EA35A220F6E18009B19E0 /* Statistic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
+		525EA35B220F6E18009B19E0 /* Airport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
+		525EA35C220F6E18009B19E0 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		525EA35D220F6E18009B19E0 /* Delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
+		525EA35E220F6E18009B19E0 /* FlightTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightTime.swift; sourceTree = "<group>"; };
+		525EA35F220F6E18009B19E0 /* MinutesDelayed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinutesDelayed.swift; sourceTree = "<group>"; };
+		52B55327220F7FE60027C045 /* Carrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +120,7 @@
 				525EA32F220F67BB009B19E0 /* Assets.xcassets */,
 				525EA331220F67BB009B19E0 /* LaunchScreen.storyboard */,
 				525EA334220F67BB009B19E0 /* Info.plist */,
-				525EA32C220F67BA009B19E0 /* PrivateQueueFRC.xcdatamodeld */,
+				525EA356220F67CD009B19E0 /* Model */,
 			);
 			path = PrivateQueueFRC;
 			sourceTree = "<group>";
@@ -126,6 +141,22 @@
 				525EA34A220F67BB009B19E0 /* Info.plist */,
 			);
 			path = PrivateQueueFRCUITests;
+			sourceTree = "<group>";
+		};
+		525EA356220F67CD009B19E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				525EA35B220F6E18009B19E0 /* Airport.swift */,
+				52B55327220F7FE60027C045 /* Carrier.swift */,
+				525EA35D220F6E18009B19E0 /* Delay.swift */,
+				525EA35C220F6E18009B19E0 /* Flight.swift */,
+				525EA35E220F6E18009B19E0 /* FlightTime.swift */,
+				525EA35F220F6E18009B19E0 /* MinutesDelayed.swift */,
+				525EA359220F6E18009B19E0 /* RootClass.swift */,
+				525EA35A220F6E18009B19E0 /* Statistic.swift */,
+				525EA32C220F67BA009B19E0 /* PrivateQueueFRC.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +290,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525EA360220F6E18009B19E0 /* RootClass.swift in Sources */,
 				525EA328220F67BA009B19E0 /* ViewController.swift in Sources */,
+				52B55328220F7FE60027C045 /* Carrier.swift in Sources */,
+				525EA364220F6E18009B19E0 /* Delay.swift in Sources */,
+				525EA366220F6E18009B19E0 /* MinutesDelayed.swift in Sources */,
 				525EA326220F67BA009B19E0 /* AppDelegate.swift in Sources */,
-				525EA32E220F67BA009B19E0 /* PrivateQueueFRC.xcdatamodeld in Sources */,
+				525EA362220F6E18009B19E0 /* Airport.swift in Sources */,
+				525EA361220F6E18009B19E0 /* Statistic.swift in Sources */,
+				525EA365220F6E18009B19E0 /* FlightTime.swift in Sources */,
+				525EA363220F6E18009B19E0 /* Flight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
