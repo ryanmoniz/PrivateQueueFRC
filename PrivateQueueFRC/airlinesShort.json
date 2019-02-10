@@ -37,5 +37,44 @@
       "code": "AA", 
       "name": "American Airlines Inc."
     }
+  },
+  {
+      "airport": {
+          "code": "YYC",
+          "name": "Calgary, AB: Calgary International Airport"
+      },
+      "statistics": {
+          "flights": {
+              "cancelled": 5,
+              "on time": 561,
+              "total": 122,
+              "delayed": 22,
+              "diverted": 0
+          },
+          "# of delays": {
+              "late aircraft": 5,
+              "weather": 20,
+              "security": 1,
+              "national aviation system": 40,
+              "carrier": 34
+          },
+          "minutes delayed": {
+              "late aircraft": 400,
+              "weather": 233,
+              "carrier": 244,
+              "security": 139,
+              "total": 800,
+              "national aviation system": 300
+          }
+      },
+      "time": {
+          "label": "2019/6",
+          "year": 2019,
+          "month": 6
+      },
+      "carrier": {
+          "code": "AC",
+          "name": "Air Canada Inc."
+      }
   }
 ]

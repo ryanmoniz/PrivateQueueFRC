@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var queue = OperationQueue()
         queue.name = "writeOperationQueue"
         queue.maxConcurrentOperationCount = 1
-        queue.qualityOfService = .utility
+        queue.qualityOfService = .background
         return queue
     }()
 
@@ -69,7 +69,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //if let path = Bundle.main.path(forResource: "airlinesShort", ofType: "json") {
         if let path = Bundle.main.path(forResource: "airlines", ofType: "json") {
             let jsonOp = JSONParsingOperation(moc: moc, jsonPath: path)
-            jsonOp.qualityOfService = .utility
+            jsonOp.qualityOfService = .background
             self.writeOperationQueue.addOperation(jsonOp)
             jsonOp.completionBlock = {
                 NSLog(": jsonOp completed, reloading tableview")
@@ -103,13 +103,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let sections = self.otherController.sections {
-            return sections.count
+            let numRows = sections[section].numberOfObjects
+            return numRows
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "cell")
+        if !otherController.hasObject(at: indexPath as IndexPath) {
+            NSLog("streamViewController: configureCell: fetchedResultsController doesn't have object for \(indexPath)")
+            return UITableViewCell()
+        }
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
+            NSLog("could not dequeue cell identifier: cell")
+            return UITableViewCell()
+        }
+        
         configureCell(cell: cell, atIndexPath: indexPath as NSIndexPath)
         return cell
     }
@@ -118,7 +128,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // Note: Instead of calling this from tableView:cellForRowAtIndexPath: you can do so from the delegate method
     // tableView:willDisplayCell:forRowAtIndexPath:
     // which also has a counterpart, tableView:didEndDisplayingCell:forRowAtIndexPath: where you can re-fault the managed object.
-    func configureCell(cell: UITableViewCell, atIndexPath: NSIndexPath){
+    func configureCell(cell: UITableViewCell, atIndexPath: NSIndexPath) {
         let object = self.otherController.object(at: atIndexPath as IndexPath)
         
         // Access the managed object property from the context's queue, asynchronously
@@ -136,9 +146,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             // Set the text on the cell
             OperationQueue.main.addOperation{
-                let someCell: UITableViewCell = self.tableView.cellForRow(at: atIndexPath as IndexPath)!
-                someCell.textLabel?.text = text
-                someCell.detailTextLabel?.text = subText
+                //let someCell: UITableViewCell = self.tableView.cellForRow(at: atIndexPath as IndexPath)!
+                cell.textLabel?.text = text
+                cell.detailTextLabel?.text = subText
             }
         }
     }
@@ -183,7 +193,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.tableView.deleteRows(at: [indexPath! as IndexPath], with: UITableView.RowAnimation.fade)
             case NSFetchedResultsChangeType.update:
                 if self.tableView.cellForRow(at: indexPath! as IndexPath) != nil{
-                    self.configureCell(cell: self.tableView.cellForRow(at: newIndexPath! as IndexPath)!, atIndexPath: indexPath! as NSIndexPath)
+                    //self.configureCell(cell: self.tableView.cellForRow(at: newIndexPath! as IndexPath)!, atIndexPath: indexPath! as NSIndexPath)
                 }
             case NSFetchedResultsChangeType.move:
                 self.tableView.deleteRows(at: [indexPath! as IndexPath], with: UITableView.RowAnimation.fade)
