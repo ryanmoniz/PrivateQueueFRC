@@ -87,7 +87,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 //            self.missionaryController.performFetch(nil)
                 do {
                     try self.otherController.performFetch()
-                    self.moc.perform {
+                    OperationQueue.main.addOperation{
                         self.tableView.reloadData()
                     }
                 } catch let error {
@@ -104,6 +104,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let sections = self.otherController.sections {
             let numRows = sections[section].numberOfObjects
+            NSLog("tableView numberOfRows:\(numRows)")
             return numRows
         }
         return 0
