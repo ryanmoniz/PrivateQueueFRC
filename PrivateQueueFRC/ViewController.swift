@@ -79,6 +79,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func reloadData(){
+        NSLog("reloadData called")
         //self.appDelegate.saveContext()
         
         if let _privateChildContext = self.privateChildContext {
@@ -87,8 +88,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 //            self.missionaryController.performFetch(nil)
                 do {
                     try self.otherController.performFetch()
-                    OperationQueue.main.addOperation{
-                        self.tableView.reloadData()
+                    self.moc.perform {
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
                     }
                 } catch let error {
                     print("error:\(error)")
