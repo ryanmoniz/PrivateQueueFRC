@@ -1,0 +1,41 @@
+[
+  {
+    "airport": {
+      "code": "ATL", 
+      "name": "Atlanta, GA: Hartsfield-Jackson Atlanta International"
+    }, 
+    "statistics": {
+      "flights": {
+        "cancelled": 5, 
+        "on time": 561, 
+        "total": 752, 
+        "delayed": 186, 
+        "diverted": 0
+      }, 
+      "# of delays": {
+        "late aircraft": 18, 
+        "weather": 28, 
+        "security": 2, 
+        "national aviation system": 105, 
+        "carrier": 34
+      }, 
+      "minutes delayed": {
+        "late aircraft": 1269, 
+        "weather": 1722, 
+        "carrier": 1367, 
+        "security": 139, 
+        "total": 8314, 
+        "national aviation system": 3817
+      }
+    }, 
+    "time": {
+      "label": "2003/6", 
+      "year": 2003, 
+      "month": 6
+    }, 
+    "carrier": {
+      "code": "AA", 
+      "name": "American Airlines Inc."
+    }
+  }
+]

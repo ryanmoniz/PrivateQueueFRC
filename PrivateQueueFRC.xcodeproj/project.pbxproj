@@ -23,6 +23,9 @@
 		525EA366220F6E18009B19E0 /* MinutesDelayed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA35F220F6E18009B19E0 /* MinutesDelayed.swift */; };
 		52B55328220F7FE60027C045 /* Carrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B55327220F7FE60027C045 /* Carrier.swift */; };
 		52B5532A220F878D0027C045 /* airlines.json in Resources */ = {isa = PBXBuildFile; fileRef = 52B55329220F878D0027C045 /* airlines.json */; };
+		52B5532C220F98ED0027C045 /* airlinesShort.json in Resources */ = {isa = PBXBuildFile; fileRef = 52B5532B220F98ED0027C045 /* airlinesShort.json */; };
+		52B5532E220F9B4B0027C045 /* JSONParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B5532D220F9B4B0027C045 /* JSONParsingOperation.swift */; };
+		52B55332220FA3C50027C045 /* PrivateQueueFRC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 525EA32C220F67BA009B19E0 /* PrivateQueueFRC.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,8 @@
 		525EA35F220F6E18009B19E0 /* MinutesDelayed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinutesDelayed.swift; sourceTree = "<group>"; };
 		52B55327220F7FE60027C045 /* Carrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrier.swift; sourceTree = "<group>"; };
 		52B55329220F878D0027C045 /* airlines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airlines.json; sourceTree = "<group>"; };
+		52B5532B220F98ED0027C045 /* airlinesShort.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airlinesShort.json; sourceTree = "<group>"; };
+		52B5532D220F9B4B0027C045 /* JSONParsingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParsingOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				52B55329220F878D0027C045 /* airlines.json */,
+				52B5532B220F98ED0027C045 /* airlinesShort.json */,
+				52B5532D220F9B4B0027C045 /* JSONParsingOperation.swift */,
 				525EA325220F67BA009B19E0 /* AppDelegate.swift */,
 				525EA327220F67BA009B19E0 /* ViewController.swift */,
 				525EA329220F67BA009B19E0 /* Main.storyboard */,
@@ -269,6 +276,7 @@
 				52B5532A220F878D0027C045 /* airlines.json in Resources */,
 				525EA333220F67BB009B19E0 /* LaunchScreen.storyboard in Resources */,
 				525EA330220F67BB009B19E0 /* Assets.xcassets in Resources */,
+				52B5532C220F98ED0027C045 /* airlinesShort.json in Resources */,
 				525EA32B220F67BA009B19E0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +305,7 @@
 				525EA360220F6E18009B19E0 /* RootClass.swift in Sources */,
 				525EA328220F67BA009B19E0 /* ViewController.swift in Sources */,
 				52B55328220F7FE60027C045 /* Carrier.swift in Sources */,
+				52B5532E220F9B4B0027C045 /* JSONParsingOperation.swift in Sources */,
 				525EA364220F6E18009B19E0 /* Delay.swift in Sources */,
 				525EA366220F6E18009B19E0 /* MinutesDelayed.swift in Sources */,
 				525EA326220F67BA009B19E0 /* AppDelegate.swift in Sources */,
@@ -304,6 +313,7 @@
 				525EA361220F6E18009B19E0 /* Statistic.swift in Sources */,
 				525EA365220F6E18009B19E0 /* FlightTime.swift in Sources */,
 				525EA363220F6E18009B19E0 /* Flight.swift in Sources */,
+				52B55332220FA3C50027C045 /* PrivateQueueFRC.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +495,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryanmoniz.PrivateQueueFRC;
+				PRODUCT_MODULE_NAME = TEST;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -502,6 +513,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryanmoniz.PrivateQueueFRC;
+				PRODUCT_MODULE_NAME = TEST;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

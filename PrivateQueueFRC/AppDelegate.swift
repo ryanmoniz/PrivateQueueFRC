@@ -53,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
+
         let container = NSPersistentContainer(name: "PrivateQueueFRC")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -68,6 +69,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                  Check the error message to determine what the actual problem was.
                  */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
+            } else {
+                do {
+                    //application has the need to start with a clean slate, deleting the persistent store
+                    for persistentStoreURL in container.persistentStoreDescriptions {
+                        let _persistentStoreURL = persistentStoreURL as NSPersistentStoreDescription
+                        
+                        //try container.persistentStoreCoordinator.destroyPersistentStore(at: _persistentStoreURL.url!, ofType: NSSQLiteStoreType, options: nil)
+                    }
+                    
+                } catch let error {
+                    // Error Handling
+                    print(error)
+                }
             }
         })
         return container

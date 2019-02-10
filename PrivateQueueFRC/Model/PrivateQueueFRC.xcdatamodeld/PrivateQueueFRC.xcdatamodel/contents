@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C54" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Airport" representedClassName="Airport" syncable="YES" codeGenerationType="class">
+    <entity name="Airport" representedClassName="Airport" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="rootClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RootClass" inverseName="airport" inverseEntity="RootClass" syncable="YES"/>
     </entity>
-    <entity name="Carrier" representedClassName="Airport" syncable="YES" codeGenerationType="class">
+    <entity name="Carrier" representedClassName="Airport" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="rootClass" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="RootClass" inverseName="carrier" inverseEntity="RootClass" syncable="YES"/>
     </entity>
-    <entity name="Delay" representedClassName="Delay" syncable="YES" codeGenerationType="class">
+    <entity name="Delay" representedClassName="Delay" syncable="YES">
         <attribute name="carrier" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lateaircraft" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="nationalaviationsystem" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -18,7 +18,7 @@
         <attribute name="weather" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="statistic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Statistic" inverseName="ofdelays" inverseEntity="Statistic" syncable="YES"/>
     </entity>
-    <entity name="Flight" representedClassName="Flight" syncable="YES" codeGenerationType="class">
+    <entity name="Flight" representedClassName="Flight" syncable="YES">
         <attribute name="cancelled" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="delayed" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="diverted" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -26,13 +26,13 @@
         <attribute name="total" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="statistic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Statistic" inverseName="flights" inverseEntity="Statistic" syncable="YES"/>
     </entity>
-    <entity name="FlightTime" representedClassName="FlightTime" syncable="YES" codeGenerationType="class">
+    <entity name="FlightTime" representedClassName="FlightTime" syncable="YES">
         <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="month" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="rootClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RootClass" inverseName="time" inverseEntity="RootClass" syncable="YES"/>
     </entity>
-    <entity name="MinutesDelayed" representedClassName="MinutesDelayed" syncable="YES" codeGenerationType="class">
+    <entity name="MinutesDelayed" representedClassName="MinutesDelayed" syncable="YES">
         <attribute name="carrier" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lateaircraft" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="nationalaviationsystem" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -41,13 +41,13 @@
         <attribute name="weather" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="statistic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Statistic" inverseName="minutesDelayed" inverseEntity="Statistic" syncable="YES"/>
     </entity>
-    <entity name="RootClass" representedClassName="RootClass" syncable="YES" codeGenerationType="class">
+    <entity name="RootClass" representedClassName="RootClass" syncable="YES">
         <relationship name="airport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Airport" inverseName="rootClass" inverseEntity="Airport" syncable="YES"/>
         <relationship name="carrier" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Carrier" inverseName="rootClass" inverseEntity="Carrier" syncable="YES"/>
         <relationship name="statistics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Statistic" inverseName="rootClass" inverseEntity="Statistic" syncable="YES"/>
         <relationship name="time" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FlightTime" inverseName="rootClass" inverseEntity="FlightTime" syncable="YES"/>
     </entity>
-    <entity name="Statistic" representedClassName="Statistic" syncable="YES" codeGenerationType="class">
+    <entity name="Statistic" representedClassName="Statistic" syncable="YES">
         <relationship name="flights" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Flight" inverseName="statistic" inverseEntity="Flight" syncable="YES"/>
         <relationship name="minutesDelayed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MinutesDelayed" inverseName="statistic" inverseEntity="MinutesDelayed" syncable="YES"/>
         <relationship name="ofdelays" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Delay" inverseName="statistic" inverseEntity="Delay" syncable="YES"/>
