@@ -20,10 +20,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var queue = OperationQueue()
         queue.name = "writeOperationQueue"
         queue.maxConcurrentOperationCount = 1
+        queue.qualityOfService = .utility
         return queue
     }()
 
-    let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.newBackgroundContext()
     
     lazy var privateChildContext: NSManagedObjectContext? = {
         let childContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
@@ -65,8 +66,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func loadAirlineJSON() {
-        if let path = Bundle.main.path(forResource: "airlinesShort", ofType: "json") {
+        //if let path = Bundle.main.path(forResource: "airlinesShort", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "airlines", ofType: "json") {
             let jsonOp = JSONParsingOperation(moc: moc, jsonPath: path)
+            jsonOp.qualityOfService = .utility
             self.writeOperationQueue.addOperation(jsonOp)
             jsonOp.completionBlock = {
                 NSLog(": jsonOp completed, reloading tableview")
@@ -76,19 +79,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func reloadData(){
-        self.appDelegate.saveContext()
+        //self.appDelegate.saveContext()
         
-        privateChildContext!.perform {
-//            self.gospelController.performFetch(nil)
-//            self.missionaryController.performFetch(nil)
-            do {
-                try self.otherController.performFetch()
-                self.moc.perform {
-                    self.tableView.reloadData()
+        if let _privateChildContext = self.privateChildContext {
+            _privateChildContext.perform {
+                //            self.gospelController.performFetch(nil)
+                //            self.missionaryController.performFetch(nil)
+                do {
+                    try self.otherController.performFetch()
+                    self.moc.perform {
+                        self.tableView.reloadData()
+                    }
+                } catch let error {
+                    print("error:\(error)")
                 }
-            } catch let error {
-                print("error:\(error)")
             }
+        } else {
+            NSLog("privateChildContext is nil")
         }
     }
 
@@ -102,7 +109,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+        let cell:UITableViewCell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "cell")
         configureCell(cell: cell, atIndexPath: indexPath as NSIndexPath)
         return cell
     }
@@ -118,13 +125,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // This MUST be done through the queue!
         object.managedObjectContext?.perform{
             let text = "Airport:"+object.airport.code + " Carrier:" + object.carrier.name
-            //let subText = "Flights cancelled:\(object.statistics.flights.cancelled)" + " Delayed:\(object.statistics.minutesdelayed.total/60)"
+            guard let timeText = object.time.label else {
+                NSLog("could not get flight time/date")
+                return
+            }
+            
+            let numDelays = object.statistics.ofdelays.lateaircraft
+            //print("numDelays:\(numDelays)")
+            let subText = "\(timeText) Flights delayed:\(numDelays)"
             
             // Set the text on the cell
             OperationQueue.main.addOperation{
                 let someCell: UITableViewCell = self.tableView.cellForRow(at: atIndexPath as IndexPath)!
                 someCell.textLabel?.text = text
-                //someCell.detailTextLabel?.text = subText
+                someCell.detailTextLabel?.text = subText
             }
         }
     }

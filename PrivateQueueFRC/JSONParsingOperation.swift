@@ -45,7 +45,8 @@ class JSONParsingOperation: Operation {
                     for dict in jsonResult {
                         //print("dict:\(dict)")
                         print("index: \(index) of \(count) records")
-                        let _ = RootClass(fromDictionary: dict as! [String : Any], context: context)
+                        let root = RootClass(fromDictionary: dict as! [String : Any], context: context)
+                        //print(root)
                         index += 1
                     }
                     print("#########################")

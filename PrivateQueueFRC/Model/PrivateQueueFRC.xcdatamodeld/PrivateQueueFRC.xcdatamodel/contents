@@ -42,16 +42,16 @@
         <relationship name="statistic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Statistic" inverseName="minutesDelayed" inverseEntity="Statistic" syncable="YES"/>
     </entity>
     <entity name="RootClass" representedClassName=".RootClass" syncable="YES">
-        <relationship name="airport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Airport" inverseName="rootClass" inverseEntity="Airport" syncable="YES"/>
-        <relationship name="carrier" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Carrier" inverseName="rootClass" inverseEntity="Carrier" syncable="YES"/>
-        <relationship name="statistics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Statistic" inverseName="rootClass" inverseEntity="Statistic" syncable="YES"/>
-        <relationship name="time" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FlightTime" inverseName="rootClass" inverseEntity="FlightTime" syncable="YES"/>
+        <relationship name="airport" maxCount="1" deletionRule="Nullify" destinationEntity="Airport" inverseName="rootClass" inverseEntity="Airport" syncable="YES"/>
+        <relationship name="carrier" maxCount="1" deletionRule="Nullify" destinationEntity="Carrier" inverseName="rootClass" inverseEntity="Carrier" syncable="YES"/>
+        <relationship name="statistics" maxCount="1" deletionRule="Nullify" destinationEntity="Statistic" inverseName="rootClass" inverseEntity="Statistic" syncable="YES"/>
+        <relationship name="time" maxCount="1" deletionRule="Nullify" destinationEntity="FlightTime" inverseName="rootClass" inverseEntity="FlightTime" syncable="YES"/>
     </entity>
     <entity name="Statistic" representedClassName=".Statistic" syncable="YES">
-        <relationship name="flights" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Flight" inverseName="statistic" inverseEntity="Flight" syncable="YES"/>
-        <relationship name="minutesDelayed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MinutesDelayed" inverseName="statistic" inverseEntity="MinutesDelayed" syncable="YES"/>
-        <relationship name="ofdelays" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Delay" inverseName="statistic" inverseEntity="Delay" syncable="YES"/>
-        <relationship name="rootClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RootClass" inverseName="statistics" inverseEntity="RootClass" syncable="YES"/>
+        <relationship name="flights" maxCount="1" deletionRule="Nullify" destinationEntity="Flight" inverseName="statistic" inverseEntity="Flight" syncable="YES"/>
+        <relationship name="minutesDelayed" maxCount="1" deletionRule="Nullify" destinationEntity="MinutesDelayed" inverseName="statistic" inverseEntity="MinutesDelayed" syncable="YES"/>
+        <relationship name="ofdelays" maxCount="1" deletionRule="Nullify" destinationEntity="Delay" inverseName="statistic" inverseEntity="Delay" syncable="YES"/>
+        <relationship name="rootClass" maxCount="1" deletionRule="Nullify" destinationEntity="RootClass" inverseName="statistics" inverseEntity="RootClass" syncable="YES"/>
     </entity>
     <elements>
         <element name="Airport" positionX="32.65234375" positionY="-259.69921875" width="128" height="88"/>
@@ -60,7 +60,7 @@
         <element name="Flight" positionX="-305.03125" positionY="220.64453125" width="128" height="135"/>
         <element name="FlightTime" positionX="123.0390625" positionY="219.66796875" width="128" height="105"/>
         <element name="MinutesDelayed" positionX="-238.65234375" positionY="-175.609375" width="128" height="150"/>
-        <element name="RootClass" positionX="-65.5625" positionY="-14.65625" width="128" height="103"/>
-        <element name="Statistic" positionX="-270.26171875" positionY="42.04296875" width="128" height="103"/>
+        <element name="RootClass" positionX="-65.5625" positionY="-14.65625" width="128" height="105"/>
+        <element name="Statistic" positionX="-270.26171875" positionY="42.04296875" width="128" height="105"/>
     </elements>
 </model>
