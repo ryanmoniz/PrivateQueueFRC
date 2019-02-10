@@ -90,6 +90,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data Saving support
 
     func saveContext () {
+        //saving main context, but if data is on another context then we have to merge to main context
+        //or save the private context
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {

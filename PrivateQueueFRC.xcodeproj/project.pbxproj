@@ -26,6 +26,7 @@
 		52B5532C220F98ED0027C045 /* airlinesShort.json in Resources */ = {isa = PBXBuildFile; fileRef = 52B5532B220F98ED0027C045 /* airlinesShort.json */; };
 		52B5532E220F9B4B0027C045 /* JSONParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B5532D220F9B4B0027C045 /* JSONParsingOperation.swift */; };
 		52B55332220FA3C50027C045 /* PrivateQueueFRC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 525EA32C220F67BA009B19E0 /* PrivateQueueFRC.xcdatamodeld */; };
+		52B55335220FB1FE0027C045 /* NSManagedObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B55334220FB1FE0027C045 /* NSManagedObject+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		52B55329220F878D0027C045 /* airlines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airlines.json; sourceTree = "<group>"; };
 		52B5532B220F98ED0027C045 /* airlinesShort.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airlinesShort.json; sourceTree = "<group>"; };
 		52B5532D220F9B4B0027C045 /* JSONParsingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParsingOperation.swift; sourceTree = "<group>"; };
+		52B55334220FB1FE0027C045 /* NSManagedObject+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				525EA359220F6E18009B19E0 /* RootClass.swift */,
 				525EA35A220F6E18009B19E0 /* Statistic.swift */,
 				525EA32C220F67BA009B19E0 /* PrivateQueueFRC.xcdatamodeld */,
+				52B55334220FB1FE0027C045 /* NSManagedObject+Ext.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52B55335220FB1FE0027C045 /* NSManagedObject+Ext.swift in Sources */,
 				525EA360220F6E18009B19E0 /* RootClass.swift in Sources */,
 				525EA328220F67BA009B19E0 /* ViewController.swift in Sources */,
 				52B55328220F7FE60027C045 /* Carrier.swift in Sources */,

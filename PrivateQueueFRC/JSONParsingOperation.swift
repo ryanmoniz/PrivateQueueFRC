@@ -38,17 +38,22 @@ class JSONParsingOperation: Operation {
                 if let jsonResult = jsonResult as? Array<Any> {
                     print("json is parsed")
                     //assume json is an array of dictionary objects
-                    print("jsonArray count:\(jsonResult.count)")
+                    let count = jsonResult.count
+                    print("jsonArray count:\(count)")
+                    var index = 1
+                    print("#########################")
                     for dict in jsonResult {
-                        print("dict:\(dict)")
-                        
+                        //print("dict:\(dict)")
+                        print("index: \(index) of \(count) records")
+                        let _ = RootClass(fromDictionary: dict as! [String : Any], context: context)
+                        index += 1
                     }
+                    print("#########################")
+                    saveChanges()
                 }
             } catch {
                 print("json could not be parsed")
             }
-            
-            //saveChanges()
         }
     }
     
