@@ -13,13 +13,13 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PrivateQueueFRC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TEST" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l1q-sb-Or3">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="176" width="375" height="491"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="EHv-Uc-eoW" detailTextLabel="BtL-t2-HIj" style="IBUITableViewCellStyleSubtitle" id="cQO-as-oeq">
@@ -52,18 +52,52 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="S51-Lo-row"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5O-D9-80m">
+                                <rect key="frame" x="0.0" y="20" width="375" height="148"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEx-vR-RFn">
+                                        <rect key="frame" x="8" y="90" width="359" height="30"/>
+                                        <state key="normal" title="Tap"/>
+                                        <connections>
+                                            <action selector="tapAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZGK-as-tQS"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tapped 0 times" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aW7-Ki-eDA">
+                                        <rect key="frame" x="8" y="31" width="359" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="aW7-Ki-eDA" firstAttribute="top" secondItem="S5O-D9-80m" secondAttribute="top" constant="31" id="2ox-aW-kNC"/>
+                                    <constraint firstAttribute="trailing" secondItem="kEx-vR-RFn" secondAttribute="trailing" constant="8" id="4tT-vR-2vN"/>
+                                    <constraint firstItem="kEx-vR-RFn" firstAttribute="leading" secondItem="S5O-D9-80m" secondAttribute="leading" constant="8" id="7dg-4J-nKi"/>
+                                    <constraint firstItem="kEx-vR-RFn" firstAttribute="top" secondItem="aW7-Ki-eDA" secondAttribute="bottom" constant="38" id="Hi9-Vb-IJm"/>
+                                    <constraint firstAttribute="bottom" secondItem="kEx-vR-RFn" secondAttribute="bottom" constant="28" id="ITP-is-u4L"/>
+                                    <constraint firstAttribute="height" constant="148" id="QW6-Aq-W68"/>
+                                    <constraint firstAttribute="trailing" secondItem="aW7-Ki-eDA" secondAttribute="trailing" constant="8" id="ZqF-b3-en8"/>
+                                    <constraint firstItem="aW7-Ki-eDA" firstAttribute="leading" secondItem="S5O-D9-80m" secondAttribute="leading" constant="8" id="kk0-nQ-xb5"/>
+                                    <constraint firstItem="kEx-vR-RFn" firstAttribute="top" secondItem="aW7-Ki-eDA" secondAttribute="bottom" constant="38" id="vuV-h9-P8e"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="l1q-sb-Or3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1Om-SS-dUb"/>
                             <constraint firstItem="l1q-sb-Or3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Cdw-hp-zAJ"/>
+                            <constraint firstItem="S5O-D9-80m" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Euq-tF-TQJ"/>
                             <constraint firstItem="l1q-sb-Or3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fgq-08-dmq"/>
-                            <constraint firstItem="l1q-sb-Or3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pa5-zq-5cH"/>
+                            <constraint firstItem="S5O-D9-80m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jss-MJ-EwB"/>
+                            <constraint firstItem="S5O-D9-80m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jvv-UD-Tlg"/>
+                            <constraint firstItem="l1q-sb-Or3" firstAttribute="top" secondItem="S5O-D9-80m" secondAttribute="bottom" constant="8" id="vwH-aU-Tks"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="l1q-sb-Or3" id="kd5-8c-xKu"/>
+                        <outlet property="tappedLabel" destination="aW7-Ki-eDA" id="srw-6E-EQd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

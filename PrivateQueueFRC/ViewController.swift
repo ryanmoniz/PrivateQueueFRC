@@ -13,6 +13,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var tappedLabel: UILabel!
+    var tappedCount = 0
+    
     var appDelegate: AppDelegate!
     
     //operation queue to ensure writes are done in serial
@@ -63,6 +66,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //load the JSON file
         loadAirlineJSON()
+    }
+    
+    @IBAction func tapAction(_ sender: Any) {
+        tappedCount += 1
+        self.tappedLabel.text = "Tapped \(tappedCount) times"
     }
     
     func loadAirlineJSON() {
